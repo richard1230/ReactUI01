@@ -1,5 +1,5 @@
-const path = require('path')
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');  
 module.exports = {
     mode: 'production',
     //Entry  
@@ -22,7 +22,7 @@ module.exports = {
             {
                 // \ means Escape character
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader'
             }
             // {
             //     test: /\.svg$/,
@@ -41,4 +41,11 @@ module.exports = {
         ]
     },
 
+    plugins:[
+        new HtmlWebpackPlugin({
+            title: 'RUI',
+            template:'index.html'
+        })
+    ]
+  
 }
