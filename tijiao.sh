@@ -3,5 +3,4 @@
 git add . &&
 git commit -m "$1" &&
 git pull  &&
-git push &&
-echo hello
+git push -u origin main
