@@ -39,12 +39,6 @@ module.exports = {
             //     ]
             // }
         ]
-    },
-    plugins:[
-        new HtmlWebpackPlugin({
-            title: 'RUI',
-            template:'index.html'
-        })
-    ]
-  
+    }
+
 }
