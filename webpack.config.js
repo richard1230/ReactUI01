@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');  
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     //Entry  
     entry: {
         index: './lib/index.tsx'
