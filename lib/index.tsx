@@ -5,8 +5,13 @@ import Icon from './icon/icon';
 
 
 ReactDOM.render(
-    <Icon  name='wechat' />,
-    document.body
+    <div>
+        <Icon name='wechat' />
+        <Icon name='alipay' />
+        <Icon name='qq' />
+    </div>,
+
+    document.querySelector('#root')
     // document.getElementById('app')
 )
 

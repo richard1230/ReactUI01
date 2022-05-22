@@ -23,11 +23,11 @@ module.exports = {
                 // \ means Escape character
                 test: /\.tsx?$/,
                 loader: 'ts-loader'
-            }
-            // {
-            //     test: /\.svg$/,
-            //     loader: 'svg-sprite-loader',
-            // },
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+            },
             // {
             //     test: /\.scss$/,
             //     use: ['style-loader', 'css-loader', 'sass-loader']
