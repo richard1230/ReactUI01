@@ -1,0 +1,11 @@
+.fui-icon {
+    width: 2em;
+    height: 2em;
+    //本来的inline是不受宽高的限制
+    display: inline-block;
+    //如果想要svg接受外面字体颜色的控制，就用下面这个
+    fill: currentColor;
+  }
+
+  
+  

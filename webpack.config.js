@@ -28,10 +28,10 @@ module.exports = {
                 test: /\.svg$/,
                 loader: 'svg-sprite-loader',
             },
-            // {
-            //     test: /\.scss$/,
-            //     use: ['style-loader', 'css-loader', 'sass-loader']
-            // },
+            {
+                test: /\.scss$/,
+                use:['style-loader','css-loader','sass-loader']//注意顺序,从右往左
+            },
             // {
             //     test: /\.(png|jpg|jpeg|gif)$/,
             //     use: [
