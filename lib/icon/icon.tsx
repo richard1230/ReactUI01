@@ -4,6 +4,8 @@ import './icon.scss';
 
 //extends React.SVGAttributes<SVGElement> ---> 保证svg有非常多的dom事件处理函数,
 // 而不用自己在接口里面一个一个写;
+//其实这里的本质是让IconProps继承了React.SVGAttributes这个接口
+//React.SVGAttributes这个接口是有非常多的属性的,包括各种事件处理函数
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
 }
@@ -17,9 +19,7 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
   return (
 
     <svg className="fui-icon"
-         onClick={props.onClick}
-         onMouseEnter={props.onMouseEnter}
-         onMouseLeave={props.onMouseLeave}
+         {...props}
     >
       <use xlinkHref={`#${props.name}`}/>
     </svg>
