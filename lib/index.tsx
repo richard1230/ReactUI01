@@ -1,21 +1,25 @@
 import ReactDOM from 'react-dom';
-import React from 'react'
+import React from 'react';
 import Icon from './icon/icon';
 
 
-const fn = () => { 
-    console.log("this is fn ")
-}
+const fn: React.MouseEventHandler = (e) => {
+  console.log(e.target);
+};
 
 ReactDOM.render(
-    <div>
-        {/* <Icon name='wechat' />
+  <div>
+    {/* <Icon name='wechat' />
         <Icon name='alipay' /> */}
-        <Icon name='qq' onClick={fn}/>
-    </div>,
+    <Icon name="qq"
+          onClick={fn}
+          onMouseEnter={() => console.log('i am entering')}
+          onMouseLeave={() => console.log('i am leaving')}
+    />
+  </div>,
 
-    document.querySelector('#root')
-    // document.getElementById('app')
-)
+  document.querySelector('#root')
+  // document.getElementById('app')
+);
 
 
