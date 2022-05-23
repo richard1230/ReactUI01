@@ -12,6 +12,7 @@ ReactDOM.render(
     {/* <Icon name='wechat' />
         <Icon name='alipay' /> */}
     <Icon name="qq"
+          // className='qwert'
           onClick={fn}
           onMouseEnter={() => console.log('i am entering')}
           onMouseLeave={() => console.log('i am leaving')}
