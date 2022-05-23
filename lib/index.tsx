@@ -12,6 +12,7 @@ ReactDOM.render(
     {/* <Icon name='wechat' />
         <Icon name='alipay' /> */}
     <Icon name="qq"
+          className='qqqqq'//这里的qqqqq会把icon里面的fui-icon这个className给覆盖了
           onClick={fn}
           onMouseEnter={() => console.log('i am entering')}
           onMouseLeave={() => console.log('i am leaving')}
