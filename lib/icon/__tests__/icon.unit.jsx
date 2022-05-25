@@ -1,11 +1,9 @@
 import * as render from 'react-test-renderer'
 import React from "react";
 import Icon from "../icon";
-import Enzyme, {mount} from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import  {mount} from 'enzyme';
 
 
-Enzyme.configure({adapter: new Adapter()});
 
 describe('icon 组件单元测试: ', () => {
   it('should render successful', function () {
