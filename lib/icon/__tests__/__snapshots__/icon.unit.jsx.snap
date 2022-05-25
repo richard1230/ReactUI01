@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon 组件单元测试:  should render successful 1`] = `
+<svg
+  className="fui-icon"
+>
+  <use
+    xlinkHref="#alipay"
+  />
+</svg>
+`;

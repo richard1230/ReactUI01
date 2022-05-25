@@ -18,15 +18,13 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 //后面是一个箭头函数,接受的参数是props,返回的是svg组件,
 //这里就是说我们自定义的Icon组件就是用svg来替代了,故props其实就是IconProps了
 const Icon: React.FunctionComponent<IconProps> = (props) => {
-  const {className, name, ...restProps} = props
+  const {className, name, ...restProps} = props;
   return (
     <svg className={classes('fui-icon', className)}
          {...restProps}//这里的属性其实是包含各种各样的事件处理函数的
     >
       <use xlinkHref={`#${name}`}/>
     </svg>
-
-
   );
 };
 
