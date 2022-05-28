@@ -1,5 +1,5 @@
 import React from 'react';
-// import './importicons';
+import './importicons';//importIcons作用:导入所有svg,没有它不行
 import './icon.scss';
 import classes from '../helpers/classes';
 
@@ -20,6 +20,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 const Icon: React.FunctionComponent<IconProps> = (props) => {
   const {className, name, ...restProps} = props;
   return (
+    //这里的classes是解决命名className的问题
     <svg className={classes('fui-icon', className)}
          {...restProps}//这里的属性其实是包含各种各样的事件处理函数的
     >
