@@ -13,7 +13,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 }
 
 //如何申明一个函数组件接受的props类型
-//<>：表示FunctionComponent接受一个参数,其源代码里面指明了此参数为p(这里为name),不传的话即为空对象
+//<>：表示FunctionComponent接受一个参数,其源代码里面指明了此参数类型为对象(这里为name),不传的话即为空对象
 // interface FunctionComponent<P = {}>
 //后面是一个箭头函数,接受的参数是props,返回的是svg组件,
 //这里就是说我们自定义的Icon组件就是用svg来替代了,故props其实就是IconProps了

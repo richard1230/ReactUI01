@@ -7,3 +7,14 @@ function classes(...names: (string | undefined)[]) {
 
 
 export default classes;
+
+
+//高阶函数
+function scopedClassMaker(prefix: string) {
+ return function (name?:string) {
+   return [prefix,name].filter(Boolean).join('-');
+ }
+}
+
+
+export {scopedClassMaker};
