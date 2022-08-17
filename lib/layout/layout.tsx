@@ -15,8 +15,10 @@ const Layout: React.FunctionComponent<Props> = (props)=>{
     const {className,...rest} = props;
     const children = props.children as Array<ReactElement>;
     //这里是说 div的class(类名)中有Aside这个名字,那么就改变其样式将aside这部分元素放在左边,右边为上中下结构--->查看一下layout.scss即可知道
+    // children 有 length 这个 key
     const hasAside = 'length' in children && children.reduce((result,node)=> result || node.type === Aside,false)
   return (
+    //hasAside:hasAside  --->  简写为 hasAside
     <div className={sc({'': true, hasAside}, {extra: className})} {...rest}>
       {props.children}
     </div>
