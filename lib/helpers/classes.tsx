@@ -8,11 +8,18 @@ function classes(...names: (string | undefined)[]) {
 
 export default classes;
 
-
+interface Options {
+  extra: string | undefined
+}
 //高阶函数
 function scopedClassMaker(prefix: string) {
- return function (name?:string) {
-   return [prefix,name].filter(Boolean).join('-');
+ return function x(name?:string, options?:Options) {
+   const result = [prefix,name].filter(Boolean).join('-');
+   if (options && options.extra){
+     return [result,options && options.extra].filter(Boolean).join(' ');
+   }else {
+     return result
+   }
  }
 }
 
