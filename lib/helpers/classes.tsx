@@ -11,9 +11,15 @@ export default classes;
 interface Options {
   extra: string | undefined
 }
+
+interface ClassToggles {
+  [K: string]: boolean
+}
+
+
 //高阶函数
 function scopedClassMaker(prefix: string) {
- return function x(name?:string, options?:Options) {
+ return function (name?:string, options?:Options) {
    const result = [prefix,name].filter(Boolean).join('-');
    if (options && options.extra){
      return [result,options && options.extra].filter(Boolean).join(' ');
