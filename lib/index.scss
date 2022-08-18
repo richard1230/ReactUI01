@@ -1,0 +1,21 @@
+//表示以fui-为开头的类选择器
+[class^=fui-] {
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+button {
+  box-sizing: border-box;
+  height: 32px;
+  //按钮与按钮之间有空隙
+  margin: 0 4px;
+  border-radius: 4px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
