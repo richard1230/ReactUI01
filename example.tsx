@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
-import IconExample from './lib/icon/icon.example';
+import IconDemo from './lib/icon/icon.demo';
+
 import ButtonExample from './lib/button.example';
 import {Aside, Content, Footer, Header, Layout} from './lib/layout/layout';
 import './example.scss';
 import {Icon} from "./lib";
-import DialogExample from './lib/dialog/dialog.example'
-import LayoutDemo from "./lib/layout/layout.example";
+import DialogDemo from "./lib/dialog/dialog.demo";
+import LayoutDemo from "./lib/layout/layout.demo";
 
 
 // Router报红没有关系
@@ -43,9 +44,9 @@ ReactDOM.render(
           </ul>
         </Aside>
         <Content className="site-main">
-          <Route path="/icon" component={IconExample}/>
+          <Route path="/icon" component={IconDemo}/>
           <Route path="/button" component={ButtonExample}/>
-          <Route path="/dialog" component={DialogExample}/>
+          <Route path="/dialog" component={DialogDemo}/>
           <Route path="/layout" component={LayoutDemo}/>
         </Content>
       </Layout>
