@@ -6,7 +6,7 @@ import './dialog.scss';
 
 
 interface Props {
-  visible: Boolean;
+  visible: boolean;
   buttons: Array<ReactElement>;
   onClose: React.MouseEventHandler;
   closeOnClickMask?: boolean;
