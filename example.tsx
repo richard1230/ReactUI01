@@ -9,6 +9,8 @@ import './example.scss';
 import {Icon} from "./lib";
 import DialogDemo from "./lib/dialog/dialog.demo";
 import LayoutDemo from "./lib/layout/layout.demo";
+import FormDemo from "./lib/form/form.demo";
+
 
 
 // Router报红没有关系
@@ -41,6 +43,11 @@ ReactDOM.render(
                 Layout
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/form">
+                Form
+              </NavLink>
+            </li>
           </ul>
         </Aside>
         <Content className="site-main">
@@ -48,6 +55,7 @@ ReactDOM.render(
           <Route path="/button" component={ButtonExample}/>
           <Route path="/dialog" component={DialogDemo}/>
           <Route path="/layout" component={LayoutDemo}/>
+          <Route path="/form"    component={FormDemo}/>
         </Content>
       </Layout>
       <Footer className="site-footer" >
