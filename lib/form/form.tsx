@@ -11,6 +11,8 @@ interface Props {
   buttons: ReactFragment;
   onSubmit: React.FormEventHandler<HTMLFormElement>;
   onChange: (value: FormValue) => void;
+  errors: { [K: string]: string[] };
+
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
@@ -35,6 +37,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
                    //这个函数是为了: 你输入数据,input那个数据框里面能够同步接受到数据
                    onChange={(e) => onInputChange(f.name, e.target.value)}
             />
+            <div>{props.errors[f.name]}</div>
           </div>)
       }
       <div>
@@ -61,7 +64,7 @@ export default Form;
 表单设计准则:  Errors = 数据＋准则(rules),就是要有验证器
 提交(onSubmit)之后会有一个验证函数
 *
-用户输入===>触发onChange===> 而后提交,就会submit===>提交校验(是否为空,长度,格式)===>得到错误==>回传给表单==>用户输入...
+用户输入===>触发onChange===> 而后提交,就会submit===>提交校验(是否为空,长度,格式)===>得到错误(在提交函数里面),setError==>errors回传给表单(example里面的Form通过errors函数传给Form组件中的form,),Form组件是最底层的子组件了，这里可以通过props来展现具体属性(错误可以通过属性来展现)==>用户输入...
 
 *
 * */

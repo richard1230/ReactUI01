@@ -5,6 +5,7 @@ import Validator from './validator';
 
 
 const FormExample: React.FunctionComponent = () => {
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState<FormValue>({
     username: 'richard',
     password: ''
@@ -35,6 +36,7 @@ const FormExample: React.FunctionComponent = () => {
       }
     ];
     const errors = Validator(formData, rules);
+    setErrors(errors)
 
     console.log('this is error:'+errors);
   };
@@ -49,6 +51,7 @@ const FormExample: React.FunctionComponent = () => {
           }
           onSubmit={onSubmit}
           onChange={(NewValue) => setFormData(NewValue)}
+          errors={errors}
     />
   );
 };
