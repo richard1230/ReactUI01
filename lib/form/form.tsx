@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {ReactFragment} from 'react';
+import Input from '../input/input';
 
 export interface FormValue {
   [K: string]: any;
@@ -32,7 +33,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
         props.fields.map(f =>
           <div key={f.name}>
             {f.label}
-            <input type={f.input.type}
+            <Input type={f.input.type}
                    value={formData[f.name]}
                    //这个函数是为了: 你输入数据,input那个数据框里面能够同步接受到数据
                    onChange={(e) => onInputChange(f.name, e.target.value)}

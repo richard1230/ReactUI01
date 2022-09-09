@@ -1,0 +1,18 @@
+@import "../helper";
+.fui-input{
+  border: 1px solid #dddddd;
+  //下面这两行可以替代weight和height
+  //高就是 22 + 4*2 + 1*2 = 32
+  line-height: 22px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px fade_out($main-color,1);
+  //过渡效果，结合上面一行
+  transition: box-shadow 250ms;
+
+  &:focus{
+    outline: none;//去除默认的颜色
+    border-color:$main-color ;//聚焦的时候变为蓝色
+    box-shadow: 0 0 0 2px fade_out($main-color,0.5);
+  }
+}
