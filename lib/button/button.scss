@@ -1,0 +1,38 @@
+@import "../helper";
+
+.fui-button {
+  //下面两行可以代替宽和高
+  padding: 4px 16px;
+  line-height: 22px;
+  transition: all 250ms;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+  }
+  &-normal{
+    color: #333;
+    border: 1px solid lighten(#333,50%);
+    background: white;
+
+    &:hover,&:focus{
+      border-color: $main-color;
+      color: $main-color;
+    }
+
+  }
+  &-important{
+    color: white;
+    border: 1px solid $main-color;
+    background: $main-color ;
+    //下面两行可以代替宽和高
+    //padding: 4px 16px;
+    //line-height: 22px;
+    //transition: all 250ms;
+    &:hover,&:focus{
+      background:lighten($main-color,10%);
+      border-color: lighten($main-color,10%);
+    }
+  }
+}
+
+

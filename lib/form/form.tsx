@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {ReactFragment} from 'react';
 import Input from '../input/input';
+import './form.scss'
+import classes from '../helpers/classes';
 
 export interface FormValue {
   [K: string]: any;
@@ -29,21 +31,43 @@ const Form: React.FunctionComponent<Props> = (props) => {
   }
   return (
     <form onSubmit={onSubmit}>
+      <table className="fui-form-table">
+        <tbody>
+
       {
         props.fields.map(f =>
-          <div key={f.name}>
-            {f.label}
-            <Input type={f.input.type}
-                   value={formData[f.name]}
-                   //这个函数是为了: 你输入数据,input那个数据框里面能够同步接受到数据
-                   onChange={(e) => onInputChange(f.name, e.target.value)}
-            />
-            <div>{props.errors[f.name]}</div>
-          </div>)
+          <tr className={classes('fui-form-tr')}  key={f.name}>
+            {/*下面的这个td包含的是标签:你的用户名,密码*/}
+            <td className='fui-form-td'>
+              <span className='fui-form-label'>
+                {f.label}
+              </span>
+            </td>
+            {/*下面的这个td包含的标签:两个输入框*/}
+            <td className='fui-form-td'>
+              <Input className="fui-form-input"
+                     type={f.input.type}
+                     value={formData[f.name]}
+                //这个函数是为了: 你输入数据,input那个数据框里面能够同步接受到数据
+                     onChange={(e) => onInputChange(f.name, e.target.value)}
+              />
+              <div className='fui-form-error'>
+                {props.errors[f.name]}
+              </div>
+            </td>
+          </tr>)
       }
-      <div>
-        {props.buttons}
-      </div>
+      {/*//这个地方单独的那个td保证了button与上面的两个input对齐*/}
+      <tr className="fui-form-tr">
+        {/*单独的这个td*/}
+        <td className="fui-form-td"/>
+        {/*下面这个td包含了两个button*/}
+        <td className="fui-form-td">
+          {props.buttons}
+        </td>
+      </tr>
+        </tbody>
+      </table>
     </form>
   );
 };
